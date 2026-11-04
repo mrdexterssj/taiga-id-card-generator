@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="resources">
+    <file>taiga_flag.png</file>
+  </qresource>
+</RCC>

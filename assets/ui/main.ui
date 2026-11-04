@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>911</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Taiga ID Generator</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="toolTip">
+       <string>Your Minecraft username</string>
+      </property>
+      <property name="text">
+       <string>Display name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>Place of residency:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QRadioButton" name="maleRadioButton">
+      <property name="text">
+       <string>Male</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#c0c0bd;&quot;&gt;ID Number:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLineEdit" name="fileSelectedIndicator">
+      <property name="placeholderText">
+       <string>No file selected</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="10">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="toolTip">
+       <string>It can be anything that identifies you (e.g.: your Discord username)</string>
+      </property>
+      <property name="text">
+       <string>Alias (optional):</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2" colspan="8">
+     <widget class="QLineEdit" name="aliasOptional"/>
+    </item>
+    <item row="2" column="3" rowspan="5" colspan="8">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="12" column="2">
+     <widget class="QComboBox" name="residencyCombobox">
+      <item>
+       <property name="text">
+        <string>🐗 I don't have a city (No city)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🌹 Scarlet City</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🍓 Sweet Berry City</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🍁 Toronto</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🌱 Podzol Port</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🎰 Las Vegas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🦊 Fox Town</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🌲 Spruce Sea Port</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🚶Walking City</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🏞️ Summitstead</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🐍 Latveria</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🍷 Kirtown</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>❄️ Snowtown</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🐜 Fort Ant</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>🪦 Midtown</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#c0c0bd;&quot;&gt;Personal Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="3">
+     <widget class="QRadioButton" name="femaleRadioButton">
+      <property name="text">
+       <string>Female</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="10">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="11" column="3" colspan="8">
+     <spacer name="horizontalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="2" rowspan="4">
+     <widget class="QLabel" name="displayPictureDisplay">
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>120</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>120</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-style: solid;
+border-width: 1px;
+border-radius: 5px;
+border-color: #c0c0bd;
+margin-left: 30px</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;No Image Selected&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="0" colspan="10">
+     <spacer name="horizontalSpacer_8">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="11" column="2">
+     <widget class="QComboBox" name="occupationCombobox">
+      <item>
+       <property name="text">
+        <string>Citizen</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Police</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Army</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Judge</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Gender:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0" colspan="11">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="2" colspan="9">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5" colspan="6">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="12" column="3" colspan="8">
+     <spacer name="horizontalSpacer_7">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Occupation:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="8">
+     <widget class="QLineEdit" name="genderOther"/>
+    </item>
+    <item row="14" column="0" colspan="11">
+     <widget class="Line" name="line_3">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" colspan="3">
+     <widget class="QLineEdit" name="idNumber">
+      <property name="placeholderText">
+       <string>TG-0000-000000-00</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="4" colspan="4">
+     <widget class="QRadioButton" name="otherGenderRadioButton">
+      <property name="text">
+       <string>Other (specify)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2" colspan="8">
+     <widget class="QLineEdit" name="displayName">
+      <property name="placeholderText">
+       <string>Minecraft Username</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="10">
+     <widget class="QPushButton" name="generateButton">
+      <property name="statusTip">
+       <string>Generate ID</string>
+      </property>
+      <property name="text">
+       <string>Generate ID</string>
+      </property>
+      <property name="icon">
+       <iconset theme="checkbox"/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#c0c0bd;&quot;&gt;Display Picture&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2" colspan="9">
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="reloadPreviewImage">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset theme="view-refresh"/>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#cfcfcf;&quot;&gt;Filetypes supported: PNG, JPEG&lt;br/&gt;Must be 30*40 or multiples&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QPushButton" name="selectFileButton">
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1400</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Select file</string>
+      </property>
+      <property name="icon">
+       <iconset theme="document-open"/>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="9" colspan="2">
+     <widget class="QRadioButton" name="preferNotSayRadioButton">
+      <property name="text">
+       <string>Prefer not to say</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>911</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionPreviewID"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuID">
+    <property name="title">
+     <string>ID</string>
+    </property>
+    <addaction name="actionGenerateNewIDCard"/>
+    <addaction name="actionVerifyIDAuthenticity"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <widget class="QMenu" name="menuAboutTaigaIDGenerator">
+     <property name="title">
+      <string>About Taiga ID Generator</string>
+     </property>
+     <property name="icon">
+      <iconset theme="help-about"/>
+     </property>
+     <addaction name="actionAboutThisApp"/>
+     <addaction name="actionSeeTheProjectSGitHubPage"/>
+     <addaction name="actionLearnMoreAboutTheNewTaigaRepublic"/>
+    </widget>
+    <addaction name="menuAboutTaigaIDGenerator"/>
+    <addaction name="actionAboutQt"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuID"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionGenerateNewIDCard"/>
+   <addaction name="separator"/>
+   <addaction name="actionVerifyIDAuthenticity"/>
+   <addaction name="separator"/>
+   <addaction name="actionPreviewID"/>
+  </widget>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset theme="window-close"/>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="statusTip">
+    <string>Closes the application</string>
+   </property>
+  </action>
+  <action name="actionGenerateNewIDCard">
+   <property name="icon">
+    <iconset theme="entry-new"/>
+   </property>
+   <property name="text">
+    <string>Generate new ID Card</string>
+   </property>
+   <property name="statusTip">
+    <string>Clears all fields and allow the creation of a new ID Card</string>
+   </property>
+  </action>
+  <action name="actionVerifyIDAuthenticity">
+   <property name="icon">
+    <iconset theme="view-certificate"/>
+   </property>
+   <property name="text">
+    <string>Verify ID Authenticity</string>
+   </property>
+   <property name="statusTip">
+    <string>Verifies if an ID Card is authentic and hasn't been tampered with</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="icon">
+    <iconset theme="help-about"/>
+   </property>
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+   <property name="statusTip">
+    <string>Learn more about Qt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::AboutQtRole</enum>
+   </property>
+  </action>
+  <action name="actionAboutThisApp">
+   <property name="icon">
+    <iconset theme="help-about"/>
+   </property>
+   <property name="text">
+    <string>About this app</string>
+   </property>
+   <property name="statusTip">
+    <string>Shows more information about this app</string>
+   </property>
+  </action>
+  <action name="actionSeeTheProjectSGitHubPage">
+   <property name="icon">
+    <iconset theme="open-link"/>
+   </property>
+   <property name="text">
+    <string>See the project's GitHub page</string>
+   </property>
+   <property name="statusTip">
+    <string>Opens the project's GitHub page in your default browser</string>
+   </property>
+  </action>
+  <action name="actionLearnMoreAboutTheNewTaigaRepublic">
+   <property name="icon">
+    <iconset theme="open-link"/>
+   </property>
+   <property name="text">
+    <string>Learn more about The New Taiga Republic</string>
+   </property>
+   <property name="statusTip">
+    <string>Opens the INSMP's Wiki entry on The New Taiga Republic on your default browser</string>
+   </property>
+  </action>
+  <action name="actionPreviewID">
+   <property name="icon">
+    <iconset theme="preview"/>
+   </property>
+   <property name="text">
+    <string>Preview ID</string>
+   </property>
+   <property name="statusTip">
+    <string>Shows a preview of the ID Card before exporting</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
