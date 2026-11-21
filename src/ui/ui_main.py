@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainpFnQuk.ui'
+## Form generated from reading UI file 'mainHZcYuE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.12.0
 ##
@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(911, 600)
+        MainWindow.resize(911, 628)
         MainWindow.setStyleSheet(u"")
         self.actionClose = QAction(MainWindow)
         self.actionClose.setObjectName(u"actionClose")
@@ -64,49 +64,76 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label_7 = QLabel(self.centralwidget)
-        self.label_7.setObjectName(u"label_7")
+        self.displayName = QLineEdit(self.centralwidget)
+        self.displayName.setObjectName(u"displayName")
 
-        self.gridLayout.addWidget(self.label_7, 8, 0, 1, 1)
+        self.gridLayout.addWidget(self.displayName, 9, 2, 1, 12)
 
-        self.label_11 = QLabel(self.centralwidget)
-        self.label_11.setObjectName(u"label_11")
+        self.line_2 = QFrame(self.centralwidget)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setFrameShape(QFrame.Shape.HLine)
+        self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
 
-        self.gridLayout.addWidget(self.label_11, 12, 0, 1, 1)
+        self.gridLayout.addWidget(self.line_2, 8, 1, 1, 13)
 
-        self.maleRadioButton = QRadioButton(self.centralwidget)
-        self.maleRadioButton.setObjectName(u"maleRadioButton")
+        self.label_10 = QLabel(self.centralwidget)
+        self.label_10.setObjectName(u"label_10")
 
-        self.gridLayout.addWidget(self.maleRadioButton, 10, 2, 1, 1)
+        self.gridLayout.addWidget(self.label_10, 13, 0, 1, 1)
 
-        self.label_6 = QLabel(self.centralwidget)
-        self.label_6.setObjectName(u"label_6")
+        self.label_9 = QLabel(self.centralwidget)
+        self.label_9.setObjectName(u"label_9")
 
-        self.gridLayout.addWidget(self.label_6, 0, 0, 1, 1)
-
-        self.fileSelectedIndicator = QLineEdit(self.centralwidget)
-        self.fileSelectedIndicator.setObjectName(u"fileSelectedIndicator")
-        self.fileSelectedIndicator.setClearButtonEnabled(True)
-
-        self.gridLayout.addWidget(self.fileSelectedIndicator, 4, 0, 1, 1)
-
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_3, 8, 10, 1, 1)
+        self.gridLayout.addWidget(self.label_9, 12, 0, 1, 1)
 
         self.label_8 = QLabel(self.centralwidget)
         self.label_8.setObjectName(u"label_8")
 
-        self.gridLayout.addWidget(self.label_8, 9, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_8, 10, 0, 1, 1)
 
-        self.aliasOptional = QLineEdit(self.centralwidget)
-        self.aliasOptional.setObjectName(u"aliasOptional")
+        self.label_3 = QLabel(self.centralwidget)
+        self.label_3.setObjectName(u"label_3")
 
-        self.gridLayout.addWidget(self.aliasOptional, 9, 2, 1, 8)
+        self.gridLayout.addWidget(self.label_3, 10, 7, 1, 2)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout.addItem(self.horizontalSpacer, 2, 3, 5, 8)
+        self.gridLayout.addItem(self.horizontalSpacer_8, 17, 0, 1, 11)
+
+        self.label_5 = QLabel(self.centralwidget)
+        self.label_5.setObjectName(u"label_5")
+
+        self.gridLayout.addWidget(self.label_5, 5, 0, 1, 2)
+
+        self.reloadPreviewImage = QPushButton(self.centralwidget)
+        self.reloadPreviewImage.setObjectName(u"reloadPreviewImage")
+        self.reloadPreviewImage.setEnabled(False)
+        icon6 = QIcon(QIcon.fromTheme(u"view-refresh"))
+        self.reloadPreviewImage.setIcon(icon6)
+
+        self.gridLayout.addWidget(self.reloadPreviewImage, 4, 1, 1, 1)
+
+        self.usernameContact = QLineEdit(self.centralwidget)
+        self.usernameContact.setObjectName(u"usernameContact")
+
+        self.gridLayout.addWidget(self.usernameContact, 10, 2, 1, 5)
+
+        self.radioButton_2 = QRadioButton(self.centralwidget)
+        self.radioButton_2.setObjectName(u"radioButton_2")
+        self.radioButton_2.setChecked(True)
+
+        self.gridLayout.addWidget(self.radioButton_2, 7, 0, 1, 1)
+
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_7, 14, 4, 1, 10)
+
+        self.line_4 = QFrame(self.centralwidget)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShape(QFrame.Shape.VLine)
+        self.line_4.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.gridLayout.addWidget(self.line_4, 2, 3, 6, 1)
 
         self.residencyCombobox = QComboBox(self.centralwidget)
         self.residencyCombobox.addItem("")
@@ -126,25 +153,75 @@ class Ui_MainWindow(object):
         self.residencyCombobox.addItem("")
         self.residencyCombobox.setObjectName(u"residencyCombobox")
 
-        self.gridLayout.addWidget(self.residencyCombobox, 12, 2, 1, 1)
+        self.gridLayout.addWidget(self.residencyCombobox, 14, 2, 1, 1)
+
+        self.label_7 = QLabel(self.centralwidget)
+        self.label_7.setObjectName(u"label_7")
+
+        self.gridLayout.addWidget(self.label_7, 9, 0, 1, 1)
+
+        self.idNumber = QLineEdit(self.centralwidget)
+        self.idNumber.setObjectName(u"idNumber")
+
+        self.gridLayout.addWidget(self.idNumber, 0, 2, 1, 4)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer, 15, 0, 1, 14)
+
+        self.maleRadioButton = QRadioButton(self.centralwidget)
+        self.maleRadioButton.setObjectName(u"maleRadioButton")
+
+        self.gridLayout.addWidget(self.maleRadioButton, 12, 2, 1, 1)
+
+        self.fileSelectedIndicator = QLineEdit(self.centralwidget)
+        self.fileSelectedIndicator.setObjectName(u"fileSelectedIndicator")
+        self.fileSelectedIndicator.setEnabled(False)
+        self.fileSelectedIndicator.setClearButtonEnabled(True)
+
+        self.gridLayout.addWidget(self.fileSelectedIndicator, 4, 0, 1, 1)
+
+        self.radioButton = QRadioButton(self.centralwidget)
+        self.radioButton.setObjectName(u"radioButton")
+
+        self.gridLayout.addWidget(self.radioButton, 6, 0, 1, 1)
+
+        self.preferNotSayRadioButton = QRadioButton(self.centralwidget)
+        self.preferNotSayRadioButton.setObjectName(u"preferNotSayRadioButton")
+
+        self.gridLayout.addWidget(self.preferNotSayRadioButton, 12, 12, 1, 2)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_2, 0, 6, 1, 8)
+
+        self.line_3 = QFrame(self.centralwidget)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setFrameShape(QFrame.Shape.HLine)
+        self.line_3.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.gridLayout.addWidget(self.line_3, 16, 0, 1, 14)
 
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
 
-        self.gridLayout.addWidget(self.label, 7, 0, 1, 1)
+        self.gridLayout.addWidget(self.label, 8, 0, 1, 1)
 
-        self.femaleRadioButton = QRadioButton(self.centralwidget)
-        self.femaleRadioButton.setObjectName(u"femaleRadioButton")
+        self.otherGenderRadioButton = QRadioButton(self.centralwidget)
+        self.otherGenderRadioButton.setObjectName(u"otherGenderRadioButton")
 
-        self.gridLayout.addWidget(self.femaleRadioButton, 10, 3, 1, 1)
+        self.gridLayout.addWidget(self.otherGenderRadioButton, 12, 5, 1, 4)
 
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout.addItem(self.horizontalSpacer_4, 9, 10, 1, 1)
+        self.gridLayout.addItem(self.horizontalSpacer, 2, 4, 6, 10)
 
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.line = QFrame(self.centralwidget)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.Shape.HLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
 
-        self.gridLayout.addItem(self.horizontalSpacer_6, 11, 3, 1, 8)
+        self.gridLayout.addWidget(self.line, 1, 2, 1, 12)
 
         self.displayPictureDisplay = QLabel(self.centralwidget)
         self.displayPictureDisplay.setObjectName(u"displayPictureDisplay")
@@ -160,11 +237,29 @@ class Ui_MainWindow(object):
         self.displayPictureDisplay.setScaledContents(True)
         self.displayPictureDisplay.setWordWrap(True)
 
-        self.gridLayout.addWidget(self.displayPictureDisplay, 3, 2, 4, 1)
+        self.gridLayout.addWidget(self.displayPictureDisplay, 3, 2, 5, 1)
 
-        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.generateButton = QPushButton(self.centralwidget)
+        self.generateButton.setObjectName(u"generateButton")
+        icon7 = QIcon(QIcon.fromTheme(u"checkbox"))
+        self.generateButton.setIcon(icon7)
 
-        self.gridLayout.addItem(self.horizontalSpacer_8, 15, 0, 1, 10)
+        self.gridLayout.addWidget(self.generateButton, 17, 13, 1, 1)
+
+        self.label_11 = QLabel(self.centralwidget)
+        self.label_11.setObjectName(u"label_11")
+
+        self.gridLayout.addWidget(self.label_11, 14, 0, 1, 1)
+
+        self.genderOther = QLineEdit(self.centralwidget)
+        self.genderOther.setObjectName(u"genderOther")
+
+        self.gridLayout.addWidget(self.genderOther, 12, 9, 1, 3)
+
+        self.femaleRadioButton = QRadioButton(self.centralwidget)
+        self.femaleRadioButton.setObjectName(u"femaleRadioButton")
+
+        self.gridLayout.addWidget(self.femaleRadioButton, 12, 4, 1, 1)
 
         self.occupationCombobox = QComboBox(self.centralwidget)
         self.occupationCombobox.addItem("")
@@ -173,99 +268,16 @@ class Ui_MainWindow(object):
         self.occupationCombobox.addItem("")
         self.occupationCombobox.setObjectName(u"occupationCombobox")
 
-        self.gridLayout.addWidget(self.occupationCombobox, 11, 2, 1, 1)
+        self.gridLayout.addWidget(self.occupationCombobox, 13, 2, 1, 1)
 
-        self.label_9 = QLabel(self.centralwidget)
-        self.label_9.setObjectName(u"label_9")
+        self.label_6 = QLabel(self.centralwidget)
+        self.label_6.setObjectName(u"label_6")
 
-        self.gridLayout.addWidget(self.label_9, 10, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.gridLayout.addItem(self.verticalSpacer, 13, 0, 1, 11)
-
-        self.line = QFrame(self.centralwidget)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.Shape.HLine)
-        self.line.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.gridLayout.addWidget(self.line, 1, 2, 1, 9)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_2, 0, 5, 1, 6)
-
-        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_7, 12, 3, 1, 8)
-
-        self.label_10 = QLabel(self.centralwidget)
-        self.label_10.setObjectName(u"label_10")
-
-        self.gridLayout.addWidget(self.label_10, 11, 0, 1, 1)
-
-        self.genderOther = QLineEdit(self.centralwidget)
-        self.genderOther.setObjectName(u"genderOther")
-
-        self.gridLayout.addWidget(self.genderOther, 10, 8, 1, 1)
-
-        self.line_3 = QFrame(self.centralwidget)
-        self.line_3.setObjectName(u"line_3")
-        self.line_3.setFrameShape(QFrame.Shape.HLine)
-        self.line_3.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.gridLayout.addWidget(self.line_3, 14, 0, 1, 11)
-
-        self.idNumber = QLineEdit(self.centralwidget)
-        self.idNumber.setObjectName(u"idNumber")
-
-        self.gridLayout.addWidget(self.idNumber, 0, 2, 1, 3)
-
-        self.otherGenderRadioButton = QRadioButton(self.centralwidget)
-        self.otherGenderRadioButton.setObjectName(u"otherGenderRadioButton")
-
-        self.gridLayout.addWidget(self.otherGenderRadioButton, 10, 4, 1, 4)
-
-        self.displayName = QLineEdit(self.centralwidget)
-        self.displayName.setObjectName(u"displayName")
-
-        self.gridLayout.addWidget(self.displayName, 8, 2, 1, 8)
-
-        self.generateButton = QPushButton(self.centralwidget)
-        self.generateButton.setObjectName(u"generateButton")
-        icon6 = QIcon(QIcon.fromTheme(u"checkbox"))
-        self.generateButton.setIcon(icon6)
-
-        self.gridLayout.addWidget(self.generateButton, 15, 10, 1, 1)
-
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(0, 30))
-        self.label_2.setMaximumSize(QSize(200, 16777215))
-
-        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
-
-        self.line_2 = QFrame(self.centralwidget)
-        self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.Shape.HLine)
-        self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.gridLayout.addWidget(self.line_2, 7, 2, 1, 9)
-
-        self.reloadPreviewImage = QPushButton(self.centralwidget)
-        self.reloadPreviewImage.setObjectName(u"reloadPreviewImage")
-        icon7 = QIcon(QIcon.fromTheme(u"view-refresh"))
-        self.reloadPreviewImage.setIcon(icon7)
-
-        self.gridLayout.addWidget(self.reloadPreviewImage, 4, 1, 1, 1)
-
-        self.label_5 = QLabel(self.centralwidget)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout.addWidget(self.label_5, 5, 0, 1, 2)
+        self.gridLayout.addWidget(self.label_6, 0, 0, 1, 1)
 
         self.selectFileButton = QPushButton(self.centralwidget)
         self.selectFileButton.setObjectName(u"selectFileButton")
+        self.selectFileButton.setEnabled(False)
         self.selectFileButton.setMinimumSize(QSize(140, 0))
         self.selectFileButton.setMaximumSize(QSize(1400, 16777215))
         icon8 = QIcon(QIcon.fromTheme(u"document-open"))
@@ -273,10 +285,31 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.selectFileButton, 3, 0, 1, 2)
 
-        self.preferNotSayRadioButton = QRadioButton(self.centralwidget)
-        self.preferNotSayRadioButton.setObjectName(u"preferNotSayRadioButton")
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(0, 30))
+        self.label_2.setMaximumSize(QSize(200, 16777215))
 
-        self.gridLayout.addWidget(self.preferNotSayRadioButton, 10, 9, 1, 2)
+        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 2)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_6, 13, 4, 1, 10)
+
+        self.label_4 = QLabel(self.centralwidget)
+        self.label_4.setObjectName(u"label_4")
+
+        self.gridLayout.addWidget(self.label_4, 11, 0, 1, 1)
+
+        self.aliasOptional = QLineEdit(self.centralwidget)
+        self.aliasOptional.setObjectName(u"aliasOptional")
+
+        self.gridLayout.addWidget(self.aliasOptional, 11, 2, 1, 12)
+
+        self.platformContact = QLineEdit(self.centralwidget)
+        self.platformContact.setObjectName(u"platformContact")
+
+        self.gridLayout.addWidget(self.platformContact, 10, 9, 1, 5)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -360,18 +393,21 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(statustip)
         self.actionPreviewID.setStatusTip(QCoreApplication.translate("MainWindow", u"Shows a preview of the ID Card before exporting", None))
 #endif // QT_CONFIG(statustip)
-#if QT_CONFIG(tooltip)
-        self.label_7.setToolTip(QCoreApplication.translate("MainWindow", u"Your Minecraft username", None))
-#endif // QT_CONFIG(tooltip)
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Display name:", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Place of residency:", None))
-        self.maleRadioButton.setText(QCoreApplication.translate("MainWindow", u"Male", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700; color:#c0c0bd;\">ID Number:</span></p></body></html>", None))
-        self.fileSelectedIndicator.setPlaceholderText(QCoreApplication.translate("MainWindow", u"No file selected", None))
+        self.displayName.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Minecraft Username", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Occupation:", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Gender:", None))
 #if QT_CONFIG(tooltip)
         self.label_8.setToolTip(QCoreApplication.translate("MainWindow", u"It can be anything that identifies you (e.g.: your Discord username)", None))
 #endif // QT_CONFIG(tooltip)
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Alias (optional):", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Username:", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\">Platform:</p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:9pt; font-style:italic; color:#cfcfcf;\">Filetypes supported: PNG, JPEG<br/>Must be 30x40 or multiples</span></p></body></html>", None))
+        self.reloadPreviewImage.setText("")
+        self.usernameContact.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Discord username/email/other social media", None))
+#if QT_CONFIG(tooltip)
+        self.radioButton_2.setToolTip(QCoreApplication.translate("MainWindow", u"Automatically fetches a render of your skin from NameMC and uses that as your PFP", None))
+#endif // QT_CONFIG(tooltip)
+        self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"Use my Minecraft Skin", None))
         self.residencyCombobox.setItemText(0, QCoreApplication.translate("MainWindow", u"\U0001f417 I don't have a city (No city)", None))
         self.residencyCombobox.setItemText(1, QCoreApplication.translate("MainWindow", u"\U0001f339 Scarlet City", None))
         self.residencyCombobox.setItemText(2, QCoreApplication.translate("MainWindow", u"\U0001f353 Sweet Berry City", None))
@@ -388,28 +424,35 @@ class Ui_MainWindow(object):
         self.residencyCombobox.setItemText(13, QCoreApplication.translate("MainWindow", u"\U0001f41c Fort Ant", None))
         self.residencyCombobox.setItemText(14, QCoreApplication.translate("MainWindow", u"\U0001faa6 Midtown", None))
 
+#if QT_CONFIG(tooltip)
+        self.label_7.setToolTip(QCoreApplication.translate("MainWindow", u"Your Minecraft username", None))
+#endif // QT_CONFIG(tooltip)
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Display name:", None))
+        self.idNumber.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TG-0000-000000-00", None))
+        self.maleRadioButton.setText(QCoreApplication.translate("MainWindow", u"Male", None))
+        self.fileSelectedIndicator.setPlaceholderText(QCoreApplication.translate("MainWindow", u"No file selected", None))
+        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"Provide my own PFP", None))
+        self.preferNotSayRadioButton.setText(QCoreApplication.translate("MainWindow", u"Prefer not to say", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700; color:#c0c0bd;\">Personal Information</span></p></body></html>", None))
-        self.femaleRadioButton.setText(QCoreApplication.translate("MainWindow", u"Female", None))
+        self.otherGenderRadioButton.setText(QCoreApplication.translate("MainWindow", u"Other (specify)", None))
         self.displayPictureDisplay.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-style:italic;\">No Image Selected</span></p></body></html>", None))
+#if QT_CONFIG(statustip)
+        self.generateButton.setStatusTip(QCoreApplication.translate("MainWindow", u"Generate ID", None))
+#endif // QT_CONFIG(statustip)
+        self.generateButton.setText(QCoreApplication.translate("MainWindow", u"Generate ID", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Place of residency:", None))
+        self.femaleRadioButton.setText(QCoreApplication.translate("MainWindow", u"Female", None))
         self.occupationCombobox.setItemText(0, QCoreApplication.translate("MainWindow", u"Citizen", None))
         self.occupationCombobox.setItemText(1, QCoreApplication.translate("MainWindow", u"Police", None))
         self.occupationCombobox.setItemText(2, QCoreApplication.translate("MainWindow", u"Army", None))
         self.occupationCombobox.setItemText(3, QCoreApplication.translate("MainWindow", u"Judge", None))
 
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Gender:", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Occupation:", None))
-        self.idNumber.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TG-0000-000000-00", None))
-        self.otherGenderRadioButton.setText(QCoreApplication.translate("MainWindow", u"Other (specify)", None))
-        self.displayName.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Minecraft Username", None))
-#if QT_CONFIG(statustip)
-        self.generateButton.setStatusTip(QCoreApplication.translate("MainWindow", u"Generate ID", None))
-#endif // QT_CONFIG(statustip)
-        self.generateButton.setText(QCoreApplication.translate("MainWindow", u"Generate ID", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700; color:#c0c0bd;\">Display Picture</span></p></body></html>", None))
-        self.reloadPreviewImage.setText("")
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:9pt; font-style:italic; color:#cfcfcf;\">Filetypes supported: PNG, JPEG<br/>Must be 30*40 or multiples</span></p></body></html>", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700; color:#c0c0bd;\">ID Number:</span></p></body></html>", None))
         self.selectFileButton.setText(QCoreApplication.translate("MainWindow", u"Select file", None))
-        self.preferNotSayRadioButton.setText(QCoreApplication.translate("MainWindow", u"Prefer not to say", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700; color:#c0c0bd;\">Display Picture and Signature</span></p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Alias (optional):", None))
+        self.aliasOptional.setPlaceholderText(QCoreApplication.translate("MainWindow", u"mycoolusername", None))
+        self.platformContact.setPlaceholderText(QCoreApplication.translate("MainWindow", u"e.g. Discord", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuID.setTitle(QCoreApplication.translate("MainWindow", u"ID", None))
         self.menuAbout.setTitle(QCoreApplication.translate("MainWindow", u"About", None))
