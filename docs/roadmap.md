@@ -6,3 +6,8 @@
 4. Spin up a test server
 5. Make the desktop app send server API calls
 6. Hook up everything and deploy
+
+## Deployment options
+* .env file
+* os.environ
+* argparse

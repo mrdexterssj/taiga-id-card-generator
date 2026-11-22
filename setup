@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+from cryptography.hazmat.primitives.serialization import Encoding, PrivateFormat, NoEncryption, PublicFormat
+import argparse
+import sys
+import base64
+
+print("\033[34;1mInfo:\033[0m This setup walks you through the key generation process")
+print("\033[33;1mPrivate Key:\033[0m Showing the private key")
+print("\033[31;1mWarning:\033[0m This key must be kept hidden.")
+print("\033[31;1mWarning:\033[0m If this key is leaked, malicious actors could create fake IDs")
+print("\033[31;1mWarning:\033[0m using this key, allowing those fake copies to be mistaken as real IDs.")
+ans = input("\033[31;1mWarning:\033[0m Are you ready to generate the key? [y/N] ")
+
+if ans == "":
+    ans == "n"
+
+if ans.lower() == "y":
+    privk = Ed25519PrivateKey.generate()
+    print("------BEGIN PRIVATE KEY------")
+    print(base64.b64encode(privk.private_bytes(encoding=Encoding.Raw, format=PrivateFormat.Raw, encryption_algorithm=NoEncryption())).decode("utf-8"))
+    print("------END PRIVATE KEY------")
+    print("\033[34;1mInfo:\033[0m Save this key into your .env file or safe storage,")
+    print("\033[34;1mInfo:\033[0m or pass it with --private-key [YOUR_PRIVATE_KEY],")
+    print("\033[34;1mInfo:\033[0m or set it as an environment variable named $TAIGA_PRIVATE_KEY.")
+
+    print("\033[33;1mPublic Key:\033[0m Showing the public key")
+    pubk = privk.public_key()
+    print("------BEGIN PUBLIC KEY------")
+    print(base64.b64encode(pubk.public_bytes(Encoding.Raw, PublicFormat.Raw)).decode("utf-8"))
+    print("------END PUBLIC KEY------")
+    print("\033[34;1mInfo:\033[0m This key can be shared for other individuals to verify the authenticity of ID cards.")
+    print("\033[34;1mInfo:\033[0m Save this key into your .env file or safe storage,")
+    print("\033[34;1mInfo:\033[0m or pass it with --public-key [YOUR_PUBLIC_KEY],")
+    print("\033[34;1mInfo:\033[0m or set it as an environment variable named $TAIGA_PUBLIC_KEY.")
+    print("\033[34;1mInfo:\033[0m If you don't save it, this key can be regenerated later,")
+    print("\033[34;1mInfo:\033[0m but you'll have to do that manually.")
+else:
+    sys.exit(0)

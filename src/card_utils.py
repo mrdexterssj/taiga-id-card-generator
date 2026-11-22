@@ -49,7 +49,8 @@ class Card():
         if not card_back == False:
             ...
 
-    #def sign_card(pk=GLOBAL_PRIVATE_KEY):
+    def sign_card(pk=GLOBAL_PRIVATE_KEY):
+        ...
         
 
 if __name__ == "__main__":
