@@ -1,30 +1,22 @@
-from ui.card_bin import CARD_BACK, CARD_FRONT
-import base64
-import pathlib
+from base64 import b64encode, b64decode
+from pathlib import Path
 import traceback
-from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey, Ed25519PublicKey
+from main import PUBLIC_KEY, PRIVATE_KEY, CARD_BACK, CARD_FRONT
+import re
+from qrcode import make
+from qrcode.image import svg
 
 class Card():
     def __init__(self, data: dict):
         self.data = data
 
-    def gen_svg_card(self, ofld: pathlib.Path, type: str="full"):
+    def gen_svg_card(self, ofld: Path, front: bool=True, back: bool=True):
         
-        if type == "full":
-            card_front = base64.b64decode(CARD_FRONT).decode('utf-8')
-            card_back = False
-        elif type == "front_only":
-            card_front = base64.b64decode(CARD_FRONT).decode('utf-8')
-            card_back = False
-        elif type == "back_only":
-            card_front = False
-            card_back = False
-        else:
-            raise AttributeError(f"Invalid argument: type={type}")
 
-        if not card_front == False:
+        if front:
             with open(f"{str(ofld)}/card_front.svg", "wt") as output_file:
-                card_front_formatted = card_front.format(
+                card_front_formatted = CARD_FRONT.format(
                     pfp=self.data["pfp"], 
                     pfp_small=self.data["pfp_small"], 
                     b64_qrcode=self.data["qrcode"], 
@@ -38,7 +30,6 @@ class Card():
                     valid_date=self.data["valid_date"],
                     issue_date=self.data["issue_date"]
                 )
-                print(card_front_formatted)
                 try:
                     print(f"Saving to: {str(ofld)}/card_front.svg")
                     output_file.write(card_front_formatted)
@@ -46,35 +37,44 @@ class Card():
                     traceback.print_exc()
                     print(str(e))
 
-        if not card_back == False:
-            ...
+        if back:
+            with open(f"{str(ofld)}/card_back.svg", "wt") as output_file:
+                card_back_formatted = CARD_BACK.format(
+                    username=self.data["contact_username"], 
+                    platform=self.data["contact_platform"], 
+                    id_image_source=self.data["id_img_source"], 
+                    issue_server=self.data["issue_server"], 
+                    encryption_code_line_1='self.data["mc_username"]', 
+                    encryption_code_line_2='self.data["id_number"]',
+                    encryption_code_line_3='self.data["alias"]'
+                )
+                try:
+                    print(f"Saving to: {str(ofld)}/card_back.svg")
+                    output_file.write(card_back_formatted)
+                except Exception as e:
+                    traceback.print_exc()
+                    print(str(e))
 
-    def sign_card(pk=GLOBAL_PRIVATE_KEY):
-        ...
-        
+    def sign_card(self) -> str:
 
-if __name__ == "__main__":
-    #TESTING DATA
-    pfp = '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'
-    pfp_small = '/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAtAC0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9FaKK5/xtrcmjaUBA224nbYrDqo7ke/8AjVkGnd63p9hJsuLyGKT+4zjI/CrFtdwXsXmW8yTR/wB6NgRXiDMXYsxLMTkk9TVvSdan0O9SeFjjIDpnh17g1XKB7HLJ2qrJLg0n2lZokkU5VwGB9jVSWf5v/r1IG5XKfEXTpLvSoriNS32dyWA7Kep/QV1dYniHxVZaCvlygz3DDiFPT3PYUIDyRm2io4IJL25jhiUvLI21QPWtm41DQb52kmsruyYknZaSKyn8GHH4VJpfinStFuP3GnS7WGDcSSBpMfTGPyrS7A71cWttFCDny0CZ+gxVOab5utRRapBqFss9vIJIm6EfyPpVSWf5qzA7e7uFtLWadvuxIzn6AZrw7UL6S/upZ5W3SSMWY17H4iY/2LqH/XvJ/wCgmvEJGIqogMkkxVOeXGeeafM5ANUJnINWB0fgrVXg1J7Ut+7mUnHow5z+Wf0rsHly3WvN/Cjk+I7Uf7//AKCa9BJ5rOW4H//Z'
-    qrcode = 'iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ2UExURf////////z8/P////////////7+/vz8/P////////n5+fr6+v39/f7+/hISEgoKChsbG/Hx8QgICBcXFw4ODp6ens/Pzx4eHhYWFvf397q6utXV1dbW1ru7uxoaGvz8/NLS0ioqKgYGBqurq+zs7NnZ2SQkJPLy8rm5ub29vQ8PD3R0dEdHR0VFRXZ2dtfX1/T09EBAQLi4uLe3t+vr65GRkZOTk0hISLOzs9jY2Nra2kZGRgMDA/Dw8AQEBGtra4eHh3d3d5SUlPb29kNDQwUFBQEBAVxcXAICAr6+vvv7+2BgYEJCQnJyckRERLa2trS0tLW1tQcHByMjI5KSkuTk5MnJySsrKxAQEC8vLw0NDbGxsWpqam1tbSwsLCYmJvX19QAAAD09Pdzc3BEREe/v7/Pz82lpacPDw2VlZcbGxhwcHMDAwCgoKGhoaObm5sTExGFhYTIyMufn54+Pj1BQUD8/P25ubq6urhMTE5CQkOPj4zs7Ozw8PKqqqnt7ey0tLcjIyFZWVsvLy97e3t3d3e3t7crKyoiIiD4+PqOjo9DQ0JycnJqamvj4+NPT046OjmJiYp2dnWRkZJWVlXNzc3x8fGxsbGNjY5ubm6CgoAkJCVpaWpiYmJ+fn8zMzEpKSjMzM4yMjIuLizU1Nc3Nzc7OzpmZmampqTY2Ni4uLnV1dXBwcBgYGBQUFJaWlicnJ+np6VFRUZeXl+Xl5QsLCzg4OEtLS9vb2xUVFcfHx+rq6iIiIjAwMGdnZ0FBQVRUVG9vbzc3N6ampujo6CEhIYWFhUlJSR8fH3h4eOLi4lJSUh0dHVlZWSAgIBkZGYCAgP///81cqxsAAADSdFJOUyZlYyVi/f5g/2D/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////JLaKpusAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAOFSURBVDhPldT/W1NVHAdwVKTrvffIZUwX2zhXbl4Gd18ujpDGdjbY3U7XCwO7OBhijskGGEoCuXJZWpZp5ozUZn63MvJLpglKpa7v36P6j3qY1C4+Pc/s/dN5Ps/rOfee8/k8p6ho0eKCWbSkqHhpScEsfaRocQlRMCXL/hcj74ciSIIiaQJQBEFQ88U8I5eX5sKU6UC5fgW50kATgLlfe7Qiz0qNJrPZXAnZVVXcY6vZCh5UW2CN2Ww21QpaZrba7A4R1q1x1j/esFZsbHyCYlxWu83RtJC5OY9NhMjrq2Nrm1v8a30Swwc8wcYHmN2L7SKUnpQRu665WSFaJci3YY/tARaytTtESHUE1tc4GhTS+BTF8NZ2t3UhqzeJotgBkQr0nRvCUlc3RrBeFEWTMZJnVCfMpQep4Y29m56u3BzmUE+uxETzjCAsVJ+kIBTGOCb4/Vv64zicQIqEBlikbVbV+k2DRlWNqWpsaOvWZ4YrOB3mtvmCdpPmowSxXZZHWPCsAICwY1QdG5cxgjzweTDWa1mf+7mGnTxkCWBJ6rB3Y2wAlLHE8yMveDSMSm7ZlXrRXGfsIXe/9PLQnr07XhkboF/d99rr+4feoPMXoj/QffDNQ6OtAvvW4XD6yNsTre8cnTgWMpJHjs8NyzxjBzdsTr57fHnmBCDfO2xatSfoOXlKdgVOn7HCs+y/DJw7f+H9Dz50r+y6+JGgm/x4b3Ds0iXO1eYNRi7HNf9mOFd35er4RT3+BF8r/3T1oes3aMDwO6+Vf9Zv0JyU7jaSN73bp4Q0TqRHMsoNDwkYnqZpmqA10xsJOlm2Qzbsn07TytFTt2hyWsUcx+luz3yu2Q0lKACoBEJYiHwxoV74Mtesg95Bi7ZZ1B0ml7tInQr33Rsdp6c4dLc/681UDmtaT5bWiDzvckIkX49WpVJf0YSKXGQWxw3ywrG8GshaRagYt037Q46uRFbOZtvima+/+fY/h/wEmAxdvpf+To6l/P5ocs33oZuKlrmDsluEko+mbgV3p5px7IeBFdXJwJ2WYwvYlR9tLSKkep3OKq+hsR3bzvf+JI8c+PmXX0kNq+WbmprWQctv0Wh1/Hdx36yLhbOlf/xpmekHeVYeEQRBiMwCAACV2RXppHVlzMztSaVSGNZcb8V8cu8PNbeQCAmQCkFLc7V/WIE8PHvIR3VJ8bKCKf7rb0aj+ANsrX6xAAAAAElFTkSuQmCC'
-    barcode = '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'
+        num_id = ""
+        for i in re.findall(r'\d+', self.data["id_number"]):
+            num_id += i
 
-    data = {
-        "pfp": pfp,
-        "pfp_small": pfp_small,
-        "qrcode": qrcode,
-        "barcode": barcode,
-        "mc_username": "mrdexterssj",
-        "id_number": "TG-0000-000000-00",
-        "alias": "@mrdexter",
-        "city": "Fox Town",
-        "occupation": "Citizen",
-        "gender": "Male",
-        "valid_date": "31/12/2030",
-        "issue_date": "20/11/2026"
-    }
+        unsigned_str = f"{self.data["mc_username"]};{num_id};vdt:{self.data["valid_date"]}"
 
-    #------------
+        #Sign str
+        signed_bytes = PRIVATE_KEY.sign(unsigned_str.encode("utf-8"))
+        signed_str = b64encode(signed_bytes).decode("utf-8")
 
-    Card(data).gen_svg_card(pathlib.Path("~/Downloads").expanduser(), "full")
+        #Construct verification token
+        verification_token = unsigned_str + "." + signed_str
+
+        return verification_token
+
+    def gen_qr(self, verification_token):
+        qr_code = make(verification_token, image_factory=svg.SvgPathFillImage)
+        qr_code.save(Path("~/Downloads/qr_code.svg").expanduser())
+        #PENDING: convert directly to b64 to embed
+
+# Tests in /tests

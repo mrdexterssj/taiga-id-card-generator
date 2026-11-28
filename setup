@@ -2,7 +2,6 @@
 
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from cryptography.hazmat.primitives.serialization import Encoding, PrivateFormat, NoEncryption, PublicFormat
-import argparse
 import sys
 import base64
 
@@ -36,5 +35,6 @@ if ans.lower() == "y":
     print("\033[34;1mInfo:\033[0m or set it as an environment variable named $TAIGA_PUBLIC_KEY.")
     print("\033[34;1mInfo:\033[0m If you don't save it, this key can be regenerated later,")
     print("\033[34;1mInfo:\033[0m but you'll have to do that manually.")
+
 else:
     sys.exit(0)
